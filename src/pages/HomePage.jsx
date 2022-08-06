@@ -14,7 +14,7 @@ function HomePage() {
     return (
     <div>
         {projectData.map((project, key) => { 
-            <ProjectCard key={key} project={project} />;
+        return <ProjectCard key={key} project={project} />;
         })}
         </div>
         ); 

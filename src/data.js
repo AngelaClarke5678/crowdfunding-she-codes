@@ -9,7 +9,7 @@ export const allProjects = [{
     owner: 1,
 },
     {
-        id: 1,
+        id: 2,
         title: "Project One",
         description: "The first project.",
         goal: 150,
