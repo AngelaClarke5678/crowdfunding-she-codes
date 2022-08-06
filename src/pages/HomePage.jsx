@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import ProjectCard from '../components/ProjectCard';
 
-function HomePage() {
-    return <h1>This is the home page.</h1>;
-}
+function HomePage() { 
+    const [projectData, updateProjectData] = useState([])
+
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_API_URL}projects/`)
+        .then (res => res.json())
+        .then(data => updateProjectData(data))
+
+    },[])
+
+    return (
+    <div>
+        {projectData.map((project, key) => { 
+            <ProjectCard key={key} project={project} />;
+        })}
+        </div>
+        ); 
+    }
 
 export default HomePage;
