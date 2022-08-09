@@ -1,3 +1,12 @@
+:root {
+    --heading-font: 'Roboto' sans-serif, sans-serif;
+    --text-font: 'Open Sans';
+    --bg-colour: #F07167;
+    --bg-Pale: #FED987;
+    --dark-font: #3c4449;
+
+}
+
 #project-list {
     display: grid;
     grid-template-columns: 30% 30% 30%;

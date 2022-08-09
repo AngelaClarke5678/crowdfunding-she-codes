@@ -18,7 +18,9 @@ function ProjectPage() {
     return ( // im rendering information.
         <div>
             <h2>{projectData.title}</h2>
+            <img src={projectData.image}/>
             <h3>Created at: {projectData.date_created}</h3>
+            <h3>{projectData.description}</h3>
             <h3>{`Open: ${projectData.is_open}`}</h3>
             <h3>Pledges:</h3>
             <ul>

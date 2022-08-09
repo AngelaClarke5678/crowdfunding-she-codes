@@ -7,7 +7,8 @@ function HomePage() {
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}projects/`)
         .then (res => res.json())
-        .then(data => updateProjectData(data))
+        .then(data => //{data.filter{projectData.is_open}}
+         updateProjectData(data))
 
     },[])
 
