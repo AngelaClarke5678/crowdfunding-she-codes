@@ -7,8 +7,9 @@ const ProjectCard = (props) => {
     console.log(project)
     return (
         <div className='project-card'>
-            <Link to={`/project/${project.id}`}>
-                <img src={project.image} />
+            <Link to={`/project/${project.id}`}> 
+            {/* string */}
+                <img src={project.image} alt={project.title} />
                 <h3>{project.title}</h3>
             </Link>
         </div>
