@@ -1,4 +1,5 @@
 nav {
     width: 100vh;
     padding-top: 2rem;
+    background-color: var(--light-bg-colour);
 }

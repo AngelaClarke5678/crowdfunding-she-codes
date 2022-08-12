@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProjectCard.css';
 
+
 const ProjectCard = (props) => {
     const { project } = props;
     console.log(project)
@@ -17,3 +18,4 @@ const ProjectCard = (props) => {
 }
 
 export default ProjectCard;
+
