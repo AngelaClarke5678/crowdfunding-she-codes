@@ -9,11 +9,15 @@ import HomePage from './pages/HomePage'
 import ProjectPage from './pages/ProjectPage'
 import LoginPage from './pages/LoginPage';
 
+// import components
+import HeroSection from './components/HeroSection';
+
 function App() {
   return (
     <Router>
       <div>
         <Nav />
+        <HeroSection />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/project/:id" element={<ProjectPage />} />
