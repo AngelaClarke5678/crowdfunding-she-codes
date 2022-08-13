@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProjectCard.css';
 
-
 const ProjectCard = (props) => {
     const { project } = props;
     console.log(project)
@@ -12,6 +11,7 @@ const ProjectCard = (props) => {
             {/* string */}
                 <img src={project.image} alt={project.title} />
                 <h3>{project.title}</h3>
+                <h3>Goal: ${project.goal}</h3>
             </Link>
         </div>
     );
