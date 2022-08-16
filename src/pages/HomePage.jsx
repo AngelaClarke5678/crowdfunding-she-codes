@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import HeroSection from '../components/HeroSection';
 
+
 < HeroSection />
 
 function HomePage() { 
