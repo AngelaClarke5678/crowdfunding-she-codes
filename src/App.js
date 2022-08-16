@@ -13,6 +13,7 @@ import LoginPage from './pages/LoginPage';
 import HeroSection from './components/HeroSection';
 
 function App() {
+
   return (
     <Router>
       <div>

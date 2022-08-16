@@ -6,7 +6,9 @@ const Nav = () => {
     return (
        <nav>
         <Link to ="/">Home</Link>
-        <Link to = "/login">Login</Link>
+         { window.localStorage.getItem('token') == undefined &&
+        <Link to = "/login">Login</Link> }
+        <Link to = "/logout">Logout</Link>
        </nav>
     );
 }
