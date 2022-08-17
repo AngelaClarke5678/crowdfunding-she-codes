@@ -2,59 +2,58 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ProjectForm = (projectData) => {
-    const [project, SetProject] = useState(
+    const [project, PostProject] = useState(
         projectData.map
     );
     const navigate = useNavigate();
 
     const handleChange = (event) => {
         const { id, value } = event.target;
-        SetProject({...project, [id]: value
-        })
-    }
+        PostProject((prevProjectData) => ({
+        ...prevProjectData,
+        [id]: value,
+        }));
+    };
 
-    const postData = async () => {
-        const response = await fetch(
+    const token = window.localStorage.getItem("token",);
+
+    const SubmitProject = async (event) => {
+        event.preventDefault();
+
+        if (token && project.title && project.description && project.goal && project.image);
+        try { 
+            const response = await fetch(
             `${process.env.REACT_APP_API_URL}projects/`,
             {
                 method: "post",
-                headers: {"Content-Type": "application/json",
+                headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Token ${token}`,
             },
             body: JSON.stringify({
-                title: project.title, 
-              description: project.description,
-              goal: parseInt(project.goal),
-              image: project.image,
-              is_open: project.is_open === "on",
-              date_created: new Date(project.date_created).toISOString(),
-              category: project.category
+            title: project.title, 
+            description: project.description,
+            goal: project.goal,
+            image: project.image,
+            is_open: project.is_open === "on",
+            date_created: new Date(project.date_created).toISOString()
             }),
         }
         );
-        return response.json();
-    }
-
-    const token = window.localStorage.getItem("token",);
-    console.log("PostData", project, token)
-
-        
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (token && project.title && project.description && project.goal && project.image && project.date_created && project.category) 
-            {
-            postData().then((response) => {
-                navigate("/");
-            });
+        const data = await response.json();
+        navigate(`/project/${project.id}`);
+    } catch (err) {
+            console.log(err);
         }
+        
     };
-
 
     return (
         <form>
         <div>
         <label htmlFor="Title">Title:</label>
         <input type="text" 
-        id="Title" 
+        id="title" 
         placeholder="Enter title" 
         onChange={handleChange} />
         </div>
@@ -67,7 +66,7 @@ const ProjectForm = (projectData) => {
         <div>
         <label htmlFor="image">Image:</label>
         <input type="text" 
-        id="Image" 
+        id="image" 
         placeholder="Image" 
         onChange={handleChange}/></div>
         <div>
@@ -76,7 +75,12 @@ const ProjectForm = (projectData) => {
         id="goal" 
         placeholder="goal" 
         onChange={handleChange}/></div>
-        <button type="submit" onClick={handleSubmit}>submit</button>
+         <div>
+        <label htmlFor="datetime">Date:</label>
+        <input type="date" 
+        id="date_created" 
+        onChange={handleChange}/></div>
+        <button type="submit" onClick={SubmitProject}>submit</button>
         </form>
 
 );
