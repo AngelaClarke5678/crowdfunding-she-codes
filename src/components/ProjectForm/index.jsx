@@ -41,7 +41,7 @@ const ProjectForm = (projectData) => {
         }
         );
         const data = await response.json();
-        navigate(`/project/${project.id}`);
+        navigate(`/project/${data.id}`);
     } catch (err) {
             console.log(err);
         }
