@@ -2,15 +2,37 @@
     --heading-font: 'Roboto' sans-serif, sans-serif;
     --text-font: 'Open Sans';
     --bg-colour: #F07167;
-    --bg-Pale: #FED987;
+    --bg-pale: #FDFCDC;
     --dark-font: #3c4449;
     --light-element-colur: #00afb9;
     --dark-element-colour: #0081a7;
 }
 
-#project-list {
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    column-gap: 10px;
-    row-gap: 10px;
+body {
+    background-color: var(--bg-colour);
 }
+
+#project-list {
+    grid-column-gap: 30px;
+    grid-row-gap: 20px;
+    column-gap: 30px;
+    display: grid;
+    grid-template-columns: 35% 35% 35%;
+    justify-content: center;
+    margin: 80px;
+    row-gap: 20px;
+}
+
+@media (max-width: 576px) {
+    #project-list {
+        max-width: 1200px;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        display: grid;
+        gap: 1rem;
+    }
+
+}
+
+
+

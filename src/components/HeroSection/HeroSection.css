@@ -1,0 +1,13 @@
+#heroimage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 576px) {
+    img{
+        width: 100%;
+        height: auto;
+    }
+
+}

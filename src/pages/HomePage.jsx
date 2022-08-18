@@ -17,7 +17,7 @@ function HomePage() {
     },[])
 
     return (
-    <div className='project-container'>
+    <div id='project-list'>
         {projectData.map((project, key) => { 
         return <ProjectCard key={key} project={project} />;
         })}
