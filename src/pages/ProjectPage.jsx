@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+
 function ProjectPage() {
     const [projectData, setProjectData] = useState({ pledges: [] });
 // userParams to reference the content in URL. give me specific data and i'll render off that state
@@ -14,7 +15,11 @@ function ProjectPage() {
         .then((data) => { 
         setProjectData(data); 
     }); 
-    }, []); // provide the empty brackets and then it will run only once
+    }, [id]); // provide the empty brackets and then it will run only once
+// Loading State
+    if (!projectData) {
+        return <h3>Loading Project...</h3>
+        };
     return ( // im rendering information.
         <div>
             <h2>{projectData.title}</h2>
