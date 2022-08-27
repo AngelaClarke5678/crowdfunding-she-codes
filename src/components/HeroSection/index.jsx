@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../img/Hero.png'
+import Logo from '../img/Contributi-Large.png'
 import './HeroSection.css'
 
 function HeroSection () {
