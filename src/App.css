@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap');
+
 :root {
-    --heading-font: 'Roboto' sans-serif, sans-serif;
-    --text-font: 'Open Sans';
+    --heading-font: 'Roboto', sans-serif;
+    --text-font: 'Open Sans', sans-serif;
     --bg-colour: #F07167;
     --bg-pale: #FDFCDC;
     --dark-font: #3c4449;
@@ -14,6 +16,15 @@ body {
     font-family: var(--heading-font);
 }
 
+h2 {
+    font-size: 28px;
+    font-family: var(--heading-font);
+}
+
+p {
+    font-size: 22px;
+    font-family: var(--text-font);
+}
 #project-list {
     grid-column-gap: 30px;
     grid-row-gap: 20px;
