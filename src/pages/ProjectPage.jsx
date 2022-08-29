@@ -21,7 +21,7 @@ function ProjectPage() {
         return <h3>Loading Project...</h3>
         };
     return ( // im rendering information.
-        <div>
+        <div id="project-page">
             <h2>{projectData.title}</h2>
             <img src={projectData.image}/>
             <h3>Created at: {projectData.date_created}</h3>

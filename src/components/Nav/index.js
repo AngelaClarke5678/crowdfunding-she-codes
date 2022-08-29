@@ -1,8 +1,9 @@
 import React ,{ useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Nav.css"
 
 const Nav = () => {
+    const location = useLocation()
     const [LoggedIn, setLoggedIn] = 
     useState(!!window.localStorage.getItem('token')
     );
@@ -12,7 +13,10 @@ const Nav = () => {
 			setLoggedIn(false)
     }
 
-
+    React.useEffect(() => {
+        setLoggedIn(!!window.localStorage.getItem('token'))
+    }, [window.localStorage, location]
+    ) 
     return (
        <nav className="navbar">
         <Link to ="/">Home</Link>

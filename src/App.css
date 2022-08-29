@@ -23,6 +23,19 @@ body {
     justify-content: center;
     margin: 80px;
     row-gap: 20px;
+    border-radius: 5px;
+}
+
+#project-page {
+    box-shadow: 0px 0px 10px #963e37;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--bg-pale);
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 @media (max-width: 576px) {
