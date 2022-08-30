@@ -12,6 +12,7 @@ import ProjectForm from './components/ProjectForm';
 
 // import components
 import HeroSection from './components/HeroSection';
+import CreateAccount from './pages/CreateAccount';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/project/:id" element={<ProjectPage />} />
           <Route path="login" element={<LoginPage/>} />
           <Route path="CreateProject" element={<ProjectForm/>} />
+          <Route path="CreateAccount" element={<CreateAccount/>} />
         </Routes>
       </div>
     </Router>

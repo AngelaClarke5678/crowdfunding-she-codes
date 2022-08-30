@@ -22,7 +22,9 @@ const Nav = () => {
         <Link to ="/">Home</Link>
         {LoggedIn ? (
         <Link to = "/" onClick={LogOut}>Logout</Link>)
-        : (<Link to = "/login">Login</Link>)}
+        :
+        (<Link to = "/CreateAccount">Create Account</Link>)}
+        <Link to = "/login">Login</Link>
         <Link to = "/CreateProject">CreateProject</Link>
        </nav>
     );
