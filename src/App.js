@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
+import Footer from './components/Footer'
 import "./App.css";
 
 // importat pages
@@ -28,6 +29,7 @@ function App() {
           <Route path="CreateProject" element={<ProjectForm/>} />
           <Route path="CreateAccount" element={<CreateAccount/>} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
