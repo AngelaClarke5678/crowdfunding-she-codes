@@ -7,12 +7,12 @@
     --bg-pale: #FDFCDC;
     --dark-font: #3c4449;
     --light-font: #FDFCDC;
-    --light-element-colur: #00afb9;
+    --light-element-colour: #00afb9;
     --dark-element-colour: #0081a7;
 }
 
 body {
-    background-color: var(--light-element-colur);
+    background-color: var(--light-element-colour);
     margin: 0;
     font-family: var(--heading-font);
 }
@@ -30,6 +30,23 @@ p {
 a {
     color: var(--dark-font);
     text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    background-color: var(--light-element-colour);
+    color: var(--light-font);
+    border-radius: 60px;
+    min-height: 30px;
+    min-width: 120px;
+    border: none;
+}
+
+button:hover {
+    background-color: var(--dark-element-colour);
 }
 #project-list {
     grid-column-gap: 30px;

@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import './ProjectCard.css';
 
 const ProjectCard = (props) => {
-    const { project } = props;
-    console.log(project)
+    const { projectData } = props;
+    console.log(projectData)
     return (
         <div className='project-card'>
-            <Link to={`/project/${project.id}`}> 
+            <Link to={`/project/${projectData.id}`}> 
             {/* string */}
-                <img src={project.image} alt={project.title} />
-                <h3>{project.title}</h3>
-                <h3>Goal: ${project.goal}</h3>
+                <img src={projectData.image} alt={projectData.title} />
+                <h3>{projectData.title}</h3>
+                <h3>Goal: ${projectData.goal}</h3>
             </Link>
         </div>
     );

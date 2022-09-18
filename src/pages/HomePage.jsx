@@ -1,28 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import HeroSection from '../components/HeroSection';
+import LoadingSpinner from "../components/LoadingSpinner";
+
 
 
 < HeroSection />
 
 function HomePage() { 
-    const [projectData, updateProjectData] = useState([])
+    const [isLoading, setIsLoading] = useState(false);
+    const [projectData, updateProjectData] = useState([]);
 
     useEffect(() => {
+        setIsLoading(true)
         fetch(`${process.env.REACT_APP_API_URL}projects/`)
         .then (res => res.json())
-        .then(data => //{data.filter{projectData.is_open}}
-         updateProjectData(data))
-
-    },[])
+        .then(data => {
+            updateProjectData(data)
+            setIsLoading(false)
+        })
+    }, []);
 
     return (
-    <div id='project-list'>
-        {projectData.map((project, key) => { 
-        return <ProjectCard key={key} project={project} />;
-        })}
+        <div id="project-list">
+            {
+                isLoading
+                    ? <LoadingSpinner /> 
+                    : projectData.map((projectData, key) => {
+                        return <ProjectCard key={key} projectData={projectData}/>;
+                    })
+            }
         </div>
-        ); 
-    }
-
+    );
+}
 export default HomePage;
