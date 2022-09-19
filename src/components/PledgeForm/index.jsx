@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 
 const PledgeForm = (pledgeData) => {
     const [pledge, PostPledge] = useState(
         pledgeData.map
     );
+    const { id } = useParams();
     const navigate = useNavigate();
 
     const handleChange = (event) => {
@@ -33,13 +36,14 @@ const PledgeForm = (pledgeData) => {
             body: JSON.stringify({
             amount: pledge.amount, 
             comment: pledge.comment,
-            anonymous: pledge.anonymous,
-            project_id:(id)
+            anonymous: true,
+            project_id:parseInt(id)
             }),
         }
         );
         const data = await response.json();
-        navigate(`/project/${data.id}`);
+        console.log(data)
+        navigate(`/project/${id}`);
     } catch (err) {
             console.log(err);
         }
@@ -59,6 +63,12 @@ const PledgeForm = (pledgeData) => {
         <label htmlFor="description">Comment:</label>
         <input type="text" 
         id="comment" 
+        placeholder="enter a comment" 
+        onChange={handleChange}/></div>
+        <div>
+        <label htmlFor="anonymous">Anonymous:</label>
+        <input type="checkbox" 
+        id="anonymous" 
         placeholder="enter a comment" 
         onChange={handleChange}/></div>
         <button type="submit" onClick={SubmitPledge}>submit</button>

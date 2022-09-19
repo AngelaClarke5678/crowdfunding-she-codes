@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
+import { Link } from "react-router-dom";
 
 
 
@@ -35,13 +36,17 @@ function ProjectPage() {
             <h3>Created at: {new Date(projectData.date_created).toDateString()}</h3>
             <h3>{projectData.description}</h3>
             <h3>{`Open: ${projectData.is_open}`}</h3>
-            <button type="submit" className="pledge-button">Pledge</button>
+            <button type="submit" className="pledge-button"><Link to={`/pledges/${id}`}>Pledge</Link></button>
             <h3>Pledges:</h3>
             <ul>
                 {projectData.pledges.map((pledgeData, key) => {
                     return (
+                        <div>
                         <li>{pledgeData.amount} from {pledgeData.supporter}
-                        </li>);
+                        </li>
+                        <li>{pledgeData.comment}
+                        </li>
+                        </div>);
                 })}
             </ul>
         </div>

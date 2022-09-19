@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage'
 import ProjectPage from './pages/ProjectPage'
 import LoginPage from './pages/LoginPage';
 import ProjectForm from './components/ProjectForm';
+import PledgePage from './pages/PledgePage'
 
 // import components
 import HeroSection from './components/HeroSection';
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/project/:id" element={<ProjectPage />} />
+          <Route path="/pledges/:id" element={<PledgePage />} />
           <Route path="login" element={<LoginPage/>} />
           <Route path="CreateProject" element={<ProjectForm/>} />
           <Route path="CreateAccount" element={<CreateAccount/>} />

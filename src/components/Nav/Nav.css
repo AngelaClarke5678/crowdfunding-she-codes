@@ -22,7 +22,7 @@ nav a {
 nav a:hover {
     font-family: var(--heading-font);
     padding: 10px;
-    color: var(--light-element-colur);
+    color: var(--light-element-colour);
     font-size: 1.5em;
     text-decoration: underline;
 }
